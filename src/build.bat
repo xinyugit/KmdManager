@@ -2,6 +2,7 @@
 
 set cpu=64
 
+set vc2015="C:\Program Files (x86)\Microsoft Visual Studio\2015\Professional\VC\Auxiliary\Build\vcvars%cpu%.bat"
 set vc2017="C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build\vcvars%cpu%.bat"
 set vc2019="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvars%cpu%.bat"
 set vc2020="C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars%cpu%.bat"
@@ -11,6 +12,7 @@ set vc2020="C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxili
 if exist %vc2020% (call %vc2020% & goto Build)
 if exist %vc2019% (call %vc2019% & goto Build)
 if exist %vc2017% (call %vc2017% & goto Build)
+if exist %vc2015% (call %vc2015% & goto Build)
 
 :Build
 rc res\km.rc
